@@ -1,20 +1,28 @@
-# Succi – Wuthering Waves Tracker
+# Wuwa Self-Tracker
 
-Kleine statische Seite zum Verwalten der Wuthering-Waves-Charaktere: Besitz, Level, Waffe, Waffen-Level, Stats mit Netzdiagramm. Kein Build-Schritt, kein Backend.
+Kleine statische Seite für Wuthering Waves, ohne Build-Schritt und ohne Backend.
+
+- **Hauptmenü** mit Zugang zu den Bereichen
+- **Mein Team:** 50 Charaktere mit Porträt, Besitz, Level, Waffe (Name und Bild), Waffen-Level, Rang und Stats mit Netzdiagramm
+- **Challenges:** eigene Einträge (Titel, Typ, Status, Regeln, Versuche, Ziel, Datum, Notizen) vor einem animierten Rinascita-inspirierten Hintergrund
 
 ## Starten
 - Lokal: `index.html` im Browser öffnen.
 - GitHub Pages: Repo hochladen, unter *Settings → Pages* den Branch `main` (Ordner `/root`) auswählen.
 
 ## Dateien
-- `index.html` – Grundgerüst
-- `style.css` – Design (Hell/Dunkel automatisch)
-- `data.js` – Charakterliste (Name, Element, Waffe, Seltenheit), Stand Version 3.4
-- `app.js` – Logik, Speichern, Netzdiagramm, Export/Import
-- `images/` – Porträts, Dateiname = Name in Kleinbuchstaben, Leerzeichen als `-`
+- `index.html` – Menü und Seiten (per `#menu`, `#team`, `#challenges`)
+- `style.css` – Design, Hell/Dunkel, Hintergrund-Animation
+- `data.js` – Charakterliste (Stand Version 3.4)
+- `weapons.js` – Waffenliste: Name, Waffenart, Seltenheit, Bilddatei
+- `app.js` – Mein Team
+- `challenges.js` – Challenges
+- `router.js` – Seitenwechsel
+- `images/` – Charakter-Porträts, `images/weapons/` – Waffen-Icons
 
 ## Hinweise
-- Daten werden im `localStorage` des jeweiligen Browsers gespeichert (pro Gerät und Browser getrennt). Mit Export/Import als JSON sicherst du sie.
-- Neue Charaktere: Zeile in `data.js` ergänzen und Bild als `images/<name>.jpg` ablegen.
-- Netzdiagramm-Richtwerte (`RF` in `app.js`) sind Schätzwerte, keine offiziellen Maximalwerte.
-- Die Porträts stammen aus dem inoffiziellen Fan-Repo `ryanbenson/wuthering-waves-assets`. Die Rechte an den Bildern liegen bei Kuro Games. Nur für private Nutzung gedacht; bei einem öffentlichen Repo besser eigene Bilder verwenden.
+- Daten liegen im `localStorage` des Browsers (pro Gerät und Browser getrennt). Export und Import (Mein Team) sichern nur die Team-Daten, nicht die Challenges.
+- Neue Charaktere: Zeile in `data.js` ergänzen, Bild als `images/<name>.jpg` ablegen (Kleinbuchstaben, Leerzeichen als `-`).
+- Waffenliste stammt aus Datamine-Daten und kann Waffen enthalten, die noch nicht im Spiel sind.
+- Der Rinascita-Hintergrund ist eine eigene, stilisierte Zeichnung und kein offizielles Artwork.
+- Die Porträts stammen aus dem inoffiziellen Fan-Repo `ryanbenson/wuthering-waves-assets`, die Waffen-Icons aus demselben Repo. Die Rechte liegen bei Kuro Games. Für ein öffentliches Repo besser eigene Bilder verwenden.
